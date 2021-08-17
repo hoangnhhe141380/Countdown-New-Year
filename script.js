@@ -15,12 +15,12 @@ function countdown() {
 
     const totalSeconds = (newYearsDate - currentDate) / 1000
 
-    const days = totalSeconds / 3600 / 24
-    const hours = Math.floor(totalSeconds / 3600) % 24
-    const mins = Math.floor(totalSeconds / 60) % 60
-    const secs = Math.floor(totalSeconds) % 60
+    const days = Math.floor(totalSeconds / 3600 / 24)
+    const hours = Math.floor(totalSeconds / 3600 % 24)
+    const mins = Math.floor(totalSeconds / 60 % 60)
+    const secs = Math.floor(totalSeconds % 60)
 
-    daysElement.innerHTML = formatTime(days)
+    daysElement.innerHTML = days
     hoursElement.innerHTML = formatTime(hours)
     minsElement.innerHTML = formatTime(mins)
     secsElement.innerHTML = formatTime(secs)
